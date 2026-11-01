@@ -6,7 +6,7 @@
 
 ## Repositorio y contribución
 
-- Base de código: `main`, `557e14509d`, sincronizada con el `origin/main` descargado hoy. Para guardar la documentación por indicación de César, la copia de trabajo quedó en la rama local `docs/local-session-20261101`; no publicar ni mezclar esta rama en PRs de código.
+- Base de código: `main`, `557e14509d`, sincronizada con el `origin/main` descargado hoy. Para guardar la documentación por indicación de César, la copia de trabajo quedó en `docs/local-session-20261101`, publicada en `myfork` por indicación posterior de César; no mezclar esta rama en PRs de código.
 - Fix original: `3f820557c4`, rama `fix/android-keystore-quoted-path`, publicada en `myfork`.
 - PR https://github.com/tidev/titanium-sdk/pull/14629, contra `main`, enlazado al issue https://github.com/tidev/titanium-sdk/issues/14628. Al crearlo estaba abierto y no draft; no se ha comprobado el resultado posterior de CI ni su integración.
 - El PR contiene sólo `_build.js`, el nuevo validador `android/cli/lib/keystore-path.js` y `android/cli/tests/test-keystore-path.js`: un commit, tres archivos. Destinado a la línea 14.0.0; no se realizó backport a 13.x.
@@ -53,7 +53,17 @@ Logs: `/tmp/titanium-14.0.0-fixes-20261101-{build,package,install}.log`. Copia p
 
 Las suites bajo `tests/`, `cli/tests/` y `android/cli/tests/` ya forman parte del repositorio oficial. Nuestro archivo con las 20 pruebas se propone como prueba de regresión permanente dentro del PR, no como un script privado desechable. El comando oficial `test:cli` incluye el patrón `**/cli/tests/test-*.js` que lo recoge cuando está presente.
 
-Son documentación de trabajo local las notas en `docs/project/`, el plan bajo `docs/superpowers/` y el puntero de `AGENTS.md`. César pidió guardarlos en Git: se incluyen explícitamente en la rama local `docs/local-session-20261101`, sin push ni cambios al PR. La regla de `.git/info/exclude` para `docs/project/` se conserva para los archivos nuevos sin seguimiento. Logs, fixtures desechables y cachés `.gradle/` quedan sin versionar; la caché `tests/modules-source/ti.modulesdk1341/android/.gradle/` se añadió a las exclusiones locales. `NOTA_RUTA_KEYSTORE_TITANIUM.md` se eliminó por indicación de César.
+Son documentación de trabajo local las notas en `docs/project/`, el plan bajo `docs/superpowers/` y el puntero de `AGENTS.md`. César pidió guardarlos en Git: se incluyen explícitamente en `docs/local-session-20261101`, publicada en `myfork` por indicación posterior de César, sin cambios al PR. La regla de `.git/info/exclude` para `docs/project/` se conserva para los archivos nuevos sin seguimiento. Logs, fixtures desechables y cachés `.gradle/` quedan sin versionar; la caché `tests/modules-source/ti.modulesdk1341/android/.gradle/` se añadió a las exclusiones locales. `NOTA_RUTA_KEYSTORE_TITANIUM.md` se eliminó por indicación de César.
+
+## Limpieza de ramas completada
+
+César autorizó eliminar las ramas de PRs ya integrados. Se eliminaron tanto locales como de `myfork`:
+
+- `fix/android-night-mode-unchanged-recreate`: PR #14549 integrado el 2026-10-28.
+- `fix/android-tabgroup-stale-activity`: PR #14550 integrado el 2026-10-28.
+- `fix/android-exit-on-close-after-recreate`: PR #14581 integrado el 2026-10-02. Antes de eliminarla se conservó su commit adicional de `CLAUDE.md` mediante cherry-pick `9070e5babc` en la rama de documentación, comprobado idéntico y subido al fork.
+
+Verificados en GitHub: PR #14551 de ActionBar y PR #14629 del keystore siguen abiertos. Se conservaron sus ramas, `main`, la rama del SDK instalado, las combinaciones antiguas y las ramas de pruebas. Estas últimas requieren revisión aparte antes de eliminarlas.
 
 ## Próximo paso
 
