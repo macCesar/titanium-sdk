@@ -27,3 +27,7 @@ Follow Conventional Commits (`feat:`, `fix(scope):`, `chore:`); `commitlint` enf
 
 ## Security & Configuration Tips
 Use the Node.js version required by `package.json` (`vendorDependencies.node`). For Android builds, ensure `ANDROID_SDK` is set or pass SDK paths via build command arguments.
+
+## Project state
+
+Session notes are under `docs/project/`: `requirements.md` (acceptance criteria), `context.md` (conventions and documentation map), `decisions.md` (rationale), and `status.md` (current state and next step). Read `status.md` when resuming work; do not import it at startup. These local contribution notes and this pointer must stay out of unrelated upstream PRs.
