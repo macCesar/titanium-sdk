@@ -63,7 +63,18 @@ César autorizó eliminar las ramas de PRs ya integrados. Se eliminaron tanto lo
 - `fix/android-tabgroup-stale-activity`: PR #14550 integrado el 2026-10-28.
 - `fix/android-exit-on-close-after-recreate`: PR #14581 integrado el 2026-10-02. Antes de eliminarla se conservó su commit adicional de `CLAUDE.md` mediante cherry-pick `9070e5babc` en la rama de documentación, comprobado idéntico y subido al fork.
 
-Verificados en GitHub: PR #14551 de ActionBar y PR #14629 del keystore siguen abiertos. Se conservaron sus ramas, `main`, la rama del SDK instalado, las combinaciones antiguas y las ramas de pruebas. Estas últimas requieren revisión aparte antes de eliminarlas.
+Por indicación posterior de César también se eliminaron las cuatro ramas locales obsoletas, sin equivalentes publicados en `myfork`:
+
+- `sdk/creative-kids-combined` (último commit `402143a4d5`): combinación anterior de 13.4.1 con los fixes propios.
+- `sdk/creative-kids-140-combined` (`9ae0f141c4`): combinación anterior de main con los fixes propios.
+- `test/android-all-three` (`9d2fa9df7a`): variantes anteriores de pruebas de night mode, TabGroup y ActionBar.
+- `test/android-night-mode-both` (`a79e210108`): variantes anteriores de night mode y TabGroup.
+
+Se conservan sólo cinco ramas locales: `main`, `docs/local-session-20261101`, `sdk/14.0.0-fixes-20261101`, `fix/android-actionbar-survives-recreate` y `fix/android-keystore-quoted-path`. Eliminar estas referencias no modificó el SDK instalado.
+
+Verificado en GitHub: el PR #14551 de ActionBar está OPEN y APPROVED, con aprobación de hansemannn del 2026-10-01; sus nueve checks publicados terminaron en SUCCESS. No aparecen revisiones CHANGES_REQUESTED ni comentarios inline. El único comentario de conversación es del autor. Está aprobado para revisión pero todavía sin merge; conservar la rama. El PR #14629 del keystore también sigue OPEN.
+
+El `14.0.0.fixes` del 28 de octubre (`9a6e101f58`) y el instalado hoy (`ed2e30a827`) incluyen #14549, #14550, #14581 y la orientación de iOS #14584, pero no #14551 de ActionBar. Este último sí estaba en las combinaciones antiguas; su implementación final se conserva en la rama independiente del PR.
 
 ## Próximo paso
 
